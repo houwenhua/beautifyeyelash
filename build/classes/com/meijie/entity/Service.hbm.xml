@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    
+<hibernate-mapping>
+	<class name="com.meijie.entity.Service" table="service">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="servicename" column="servicename" length="30" not-null="true"></property>
+		<property name="imagepath" column="imagepath" length="50" not-null="true"></property>
+		<property name="price" column="price"  not-null="true"></property>
+		<property name="vipprice" column="vipprice" not-null="true"></property>
+		<property name="remark" column="remark" length="50" not-null="true"></property>
+		
+		<set name="consumes" table="consume" cascade="save-update" lazy="false">
+		    <key column="serviceid"></key>
+		    <one-to-many class="com.meijie.entity.Consume"/>
+		</set>
+		
+		<set name="visitors" table="visitor" cascade="save-update" lazy="false">
+		    <key column="serviceid"></key>
+		    <one-to-many class="com.meijie.entity.Visitor"/>
+		</set>
+		
+		<set name="materials" table="material" cascade="save-update" lazy="false">
+		    <key column="serviceid"></key>
+		    <one-to-many class="com.meijie.entity.Material"/>
+		</set>
+	</class>
+</hibernate-mapping>

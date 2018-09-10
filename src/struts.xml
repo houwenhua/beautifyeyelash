@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<constant name="struts.devMode" value="false"></constant>
+	<constant name="struts.locale" value="zh_CN"></constant>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.il8n.encoding" value="UTF-8"></constant>
+	<constant name="struts.action.extension" value="action"></constant>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 指定允许上传的文件最大字节数。默认值是2097152(2M) -->
+    <constant name="struts.multipart.maxSize" value="10701096"/>
+    <!-- 设置上传文件的临时文件夹,默认使用javax.servlet.context.tempdir -->
+    <constant name="struts.multipart.saveDir " value="d:/tmp" />
+    
+	<include file="config/struts-users.xml"></include>
+	<include file="config/struts-vip.xml"></include>
+	<include file="config/struts-service.xml"></include>
+	<include file="config/struts-store.xml"></include>
+	<include file="config/struts-operator.xml"></include>
+	<include file="config/struts-waiter.xml"></include>
+	<include file="config/struts-shopmanager.xml"></include>
+	<include file="config/struts-consume.xml"></include>
+	<include file="config/struts-visitor.xml"></include>
+	<include file="config/struts-goods.xml"></include>
+	<include file="config/struts-statistics.xml"></include>
+	<include file="config/struts-purchase.xml"></include>
+	<include file="config/struts-goodsrecord.xml"></include>
+	<include file="config/struts-sysuser.xml"></include>
+	<include file="config/struts-salarydetail.xml"></include>
+	<include file="config/struts-salary.xml"></include>
+	<include file="config/struts-material.xml"></include>
+	<include file="config/struts-goodsclass.xml"></include>
+</struts>

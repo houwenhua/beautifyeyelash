@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="login-package" namespace="/" extends="struts-default">
+
+  
+		<action name="login_*" class="loginAction" method="{1}">
+			<!-- <interceptor-ref name="loginIntercept">
+				<param name="excludeMethods">login</param>
+			</interceptor-ref>     
+		    <interceptor-ref name="defaultStack"></interceptor-ref>--> 
+			<result name="logout" type="redirect">/index.jsp</result> 
+		</action>
+	</package>
+</struts>

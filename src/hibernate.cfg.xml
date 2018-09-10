@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+    
+    <hibernate-configuration>
+    	<session-factory>
+    		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    	    <property name="hibernate.connection.url">jdbc:mysql:///tdyd</property>
+    	    <property name="hibernate.connection.username">root</property>
+    	    <property name="hibernate.connection.password">123456</property> -->
+    	
+    	
+    	    <property name="hibernate.show_sql">true</property>
+    	    <property name="hibernate.format_sql">true</property>
+    	    <property name="hibernate.hbm2ddl.auto">update</property>
+    	    <!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property> -->
+    	    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    	    <!-- 配置与本地线程绑定，确保每一个session都是单线程 -->
+    	    <!-- 添加下面的后会启动服务器会导致异常：getFlushMode is not valid without active transaction -->
+    	    <!-- <property name="hibernate.current_session_context_class">thread</property> --> 
+    	    
+    	    
+    	  
+    	    <mapping resource="com/meijie/entity/Tree.hbm.xml"/> 
+    	    <mapping resource="com/meijie/entity/SysUser.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/Vip.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/Service.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/ServiceImage.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/Store.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/Operator.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/Waiter.hbm.xml"/>
+    	    <mapping resource="com/meijie/entity/ShopManager.hbm.xml"/>
+    	    
+    	    <mapping class="com.meijie.entity.Consume"/>
+    	    <mapping class="com.meijie.entity.Visitor"/>
+    	    <mapping class="com.meijie.entity.Goods"/>
+    	    <mapping class="com.meijie.entity.Purchase"/>
+    	    <mapping class="com.meijie.entity.GoodsRecord"/>
+    	    <mapping class="com.meijie.entity.GoodsRecordDetail"/>
+    	    <mapping class="com.meijie.entity.SalaryDetail"/>
+    	    <mapping class="com.meijie.entity.Salary"/>
+    	    <mapping class="com.meijie.entity.Material"/>
+    	    <mapping class="com.meijie.entity.GoodsClass"/>
+    	</session-factory>
+    </hibernate-configuration>

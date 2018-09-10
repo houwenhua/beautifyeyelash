@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    
+<hibernate-mapping>
+	<class name="com.meijie.entity.Waiter" table="waiter">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name" length="20" not-null="true"></property>
+		<property name="phone" column="phone" length="20" not-null="true"></property>
+		<property name="sex" column="sex" length="1" not-null="true"></property>
+		<property name="age" column="age" not-null="true"></property>
+		<property name="salary" column="salary" not-null="true"></property>
+		<property name="storeid" column="storeid" not-null="true"></property>
+		<property name="job" column="job" not-null="true"></property>
+		
+		<set name="consumes" table="consume" cascade="all" lazy="false" inverse="true">
+		    <key column="waiterid" not-null="false"></key>
+		    <one-to-many class="com.meijie.entity.Consume"/>
+		</set>
+		<set name="visitors" table="visitor" cascade="save-update" lazy="false">
+		    <key column="serviceid"></key>
+		    <one-to-many class="com.meijie.entity.Visitor"/>
+		</set>
+		<set name="goodsrecords" table="goodsrecords" cascade="save-update" lazy="false">
+		    <key column="waiterid"></key>
+		    <one-to-many class="com.meijie.entity.GoodsRecord"/>
+		</set>
+	</class>
+</hibernate-mapping>

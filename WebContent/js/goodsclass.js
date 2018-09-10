@@ -1,0 +1,50 @@
+
+$(function(){
+	obj = {
+		editRow:undefined,
+		search:function(){
+			$("#datagrid").datagrid('load',{
+				name:$.trim($("input[name='name']").val()),
+			});
+		}
+	};
+	
+	$("#datagrid").datagrid({
+		width:700,
+		fit:true,
+		url:'goodsClass_paginationQuery.action',
+		striped:true,
+		rownumbers:true,
+		fitColumns:true,
+		columns:[[
+			{
+				field:'id',
+				title:'编号',
+				width:100,
+				checkbox:true,
+			},
+			{
+				field:'name',
+				title:'商品名',
+				width:100,
+			},
+			{
+				field:'brand',
+				title:'品牌',
+				width:100,
+			},
+			{
+				field:'number',
+				title:'数量',
+				width:100,
+			},
+		]],
+		toolbar:'#tb',
+		pagination:true,
+		pagePosition:'bottom',
+	});
+})
+function reloaddatagrid(){
+	$("#datagrid").datagrid('reload');
+	$("#datagrid").datagrid('loaded');
+}

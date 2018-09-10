@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    
+<hibernate-mapping>
+	<class name="com.meijie.entity.ServiceImage" table="ServiceImage">
+		<id name="serviceimageid" type="java.lang.Integer" column="serviceimageid">
+			<generator class="identity"></generator>
+		</id>
+		<property name="serviceid" column="serviceid" not-null="true"></property>
+		<property name="filename" column="filename" not-null="true"></property>
+		<property name="servicename" column="servicename"  not-null="true"></property>
+	</class>
+</hibernate-mapping>
